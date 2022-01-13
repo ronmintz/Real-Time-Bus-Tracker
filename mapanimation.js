@@ -15,7 +15,8 @@ async function run() {
 	const locations = await getBusLocations();
 	console.log(new Date());
 	console.log(locations);
-
+	console.log('-----------------------------');
+	
 	// remove any markers from previous time interval
 	mapMarkers.forEach((marker)=>marker.remove());
 	mapMarkers = [];
@@ -23,20 +24,15 @@ async function run() {
 	for (let i = 0; i < locations.length; i++ ) {
 		var longitude = locations[i].attributes.longitude;
 		var latitude  = locations[i].attributes.latitude;
-		// var bus_id = locations[i].id;
 		var color;
-		// console.log(bus_id, longitude, latitude);
+
 		if (locations[i].attributes.direction_id)
 			color = "red";	// going away from Harvard
 		else
 			color = "blue";	// going towards Harvard
 		var marker = new mapboxgl.Marker({"color":color}).setLngLat([longitude, latitude]).addTo(map);
 		mapMarkers.push(marker);
-
-		
 	}
-
-	console.log('-----------------------------');
 
 	// timer
 	setTimeout(run, 15000);
