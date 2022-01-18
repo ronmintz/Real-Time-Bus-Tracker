@@ -8,7 +8,7 @@
 </p>
 <p>To run this project, clone this repository to a PC and double-click on the icon for index.html in the File Explorer.
    The map with markers showing the current position of the buses will appear.  This bus line does not run from about 1 am
-   to 4:30 am, so no buses will appear on the map during this period.
+   to 4:30 am, so no buses may appear on the map during this period.
 </p>
 <p>Possible future improvements include asking the user to select the bus line to be displayed on the map.  Multiple bus lines can be shown using different color markers for the buses on each line.
 </p>
